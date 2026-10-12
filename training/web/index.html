@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NIRANJAN CREATIONS</title>
+		<script src="jquery.js" ></script>
+	</head>
+	<body>
+		<h1>Enter userName</h1>
+		<input id="user"></input>
+		<h1>Enter Password</h1>
+		<input id="password"></input>
+		<br><br>
+		<button onclick="f()">Check</button>
+		<p id="resp"></p>
+	</body>
+	<script>
+		function f(){
+			let user = document.getElementById("user").value;
+			let password = document.getElementById("password").value;
+		$.get("http://localhost:1514/"+user+"/"+password,function(resp){
+			document.getElementById("resp").innerText=resp;
+		});
+		}
+	</script>
+</html>
